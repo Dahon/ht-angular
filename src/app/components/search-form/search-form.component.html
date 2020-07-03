@@ -1,0 +1,65 @@
+<form [formGroup]="searchForm" class="search-form" (ngSubmit)="onSubmit()">
+
+    <div class="search-form__input-group" [ngClass]="displayFieldCss('departCity')">
+      <select formControlName="departCity" class="select-css">
+        <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
+      </select>
+    </div>
+    
+    <div class="search-form__input-group">
+      <select formControlName="country" class="select-css" [ngClass]="displayFieldCss('country')">
+        <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
+      </select>
+    </div>
+
+    <div class="search-form__input-group">
+      <input type="date" formControlName="date" [ngClass]="displayFieldCss('date')">
+    </div>
+
+    <div class="search-form__input-group">
+      <input class="form-control" [ngClass]="displayFieldCss('nights')" type="text" placeholder="Enter days" formControlName="nights">
+      
+      <app-field-error-display
+        [displayError]="isFieldValid('nights', 'min')" 
+        errorMsg="Please enter a value between 5 and 15.">
+      </app-field-error-display>
+      
+      <app-field-error-display
+        [displayError]="isFieldValid('nights', 'max')" 
+        errorMsg="Please enter a value between 5 and 15.">
+      </app-field-error-display>
+      
+      <app-field-error-display
+        [displayError]="isFieldValid('nights', 'pattern')" 
+        errorMsg="Please enter number">
+      </app-field-error-display>
+
+    </div>
+
+    <div class="search-form__input-group">
+      <input class="form-control" [ngClass]="displayFieldCss('nightsTo')" type="text" placeholder="Enter days" formControlName="nightsTo">
+      
+      <app-field-error-display 
+        [displayError]="isFieldValid('nightsTo', 'min')" 
+        errorMsg="Please enter a value between 5 and 15.">
+      </app-field-error-display>
+
+      <app-field-error-display 
+        [displayError]="isFieldValid('nightsTo', 'max')" 
+        errorMsg="Please enter a value between 5 and 15.">
+      </app-field-error-display>
+      
+      <app-field-error-display 
+        [displayError]="isFieldValid('nightsTo', 'pattern')" 
+        errorMsg="Please enter number">
+      </app-field-error-display>
+
+      <app-field-error-display 
+        [displayError]="isFieldValid('nightsTo', 'correctError')" 
+        errorMsg="nights less than nightsTo">
+      </app-field-error-display>
+    </div>
+
+    <button type="submit">Найти</button>
+  
+</form>

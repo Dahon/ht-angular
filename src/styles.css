@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~normalize.css';
+@import "~assets/css/spinner.css";
+@font-face {font-family: "Gotham Pro"; src: url("//db.onlinewebfonts.com/t/07a38bbad54db72a40b406bed1c72f53.eot"); src: url("//db.onlinewebfonts.com/t/07a38bbad54db72a40b406bed1c72f53.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/07a38bbad54db72a40b406bed1c72f53.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/07a38bbad54db72a40b406bed1c72f53.woff") format("woff"), url("//db.onlinewebfonts.com/t/07a38bbad54db72a40b406bed1c72f53.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/07a38bbad54db72a40b406bed1c72f53.svg#Gotham Pro") format("svg"); }
+ul, p, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+body,html {
+    margin: 0;
+    padding: 0;
+    font-family: Gotham Pro;
+    height: 100%;
+}
+* {
+    box-sizing: border-box;
+}

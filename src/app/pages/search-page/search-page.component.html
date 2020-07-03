@@ -1,0 +1,30 @@
+<div class="search-container">
+    <div class="wrapper">
+        <app-search-form></app-search-form>
+        <div class="cards-block">
+            <app-search-card *ngFor="let tour of tours; trackBy:identify" [item]="tour"></app-search-card>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li *ngFor="let item of footerList; trackBy:identify">
+                <img [src]="item.img">
+                <p>{{item.title}}</p>
+                <span>{{item.text}}</span>
+            </li>
+        </ul>
+    </div>
+    <div id="loader" *ngIf="preload">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="loading"></div>
+    </div>
+</div>
+
+
